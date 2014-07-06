@@ -1,8 +1,9 @@
-package com.github.jagyamanashi.notification2;
+package com.github.jagyamanashi.notification4;
 
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
@@ -54,9 +55,10 @@ public class MainActivity extends Activity {
     }
 
     private void showNotification() {
-        int notificationId = 001;
+        int notificationId = 004;
         String eventTitle = "Event Title";
         String eventLocation = "Event Location";
+        String eventDescription = "Event Description";
         String location = "甲府駅";
 
         Intent viewIntent = new Intent(this, MainActivity.class);
@@ -69,14 +71,20 @@ public class MainActivity extends Activity {
         PendingIntent mapPendingIntent =
                 PendingIntent.getActivity(this, 0, mapIntent, 0);
 
+        NotificationCompat.BigTextStyle bigStyle = new NotificationCompat.BigTextStyle();
+        bigStyle.bigText(eventDescription);
+
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_stat_smile)
+                .setLargeIcon(BitmapFactory.decodeResource(
+                        getResources(), R.drawable.img_kofusta))
                 .setContentTitle(eventTitle)
                 .setContentText(eventLocation)
                 .setContentIntent(viewPendingIntent)
                 .addAction(R.drawable.ic_action_smile,
-                        getString(R.string.action1), mapPendingIntent);
+                        getString(R.string.action1), mapPendingIntent)
+                .setStyle(bigStyle);
 
         NotificationManagerCompat notificationManager =
                 NotificationManagerCompat.from(this);

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Notification2.iml" filepath="$PROJECT_DIR$/Notification2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Notification2Project.iml" filepath="$PROJECT_DIR$/Notification2Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Notification4.iml" filepath="$PROJECT_DIR$/Notification4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Notification4Project.iml" filepath="$PROJECT_DIR$/Notification4Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
