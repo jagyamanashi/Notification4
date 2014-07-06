@@ -3,6 +3,7 @@ package com.github.jagyamanashi.notification2;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
@@ -56,17 +57,26 @@ public class MainActivity extends Activity {
         int notificationId = 001;
         String eventTitle = "Event Title";
         String eventLocation = "Event Location";
+        String location = "甲府駅";
 
         Intent viewIntent = new Intent(this, MainActivity.class);
         PendingIntent viewPendingIntent =
                 PendingIntent.getActivity(this, 0, viewIntent, 0);
+
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW);
+        Uri geoUri = Uri.parse("geo:0,0?q=" + Uri.encode(location));
+        mapIntent.setData(geoUri);
+        PendingIntent mapPendingIntent =
+                PendingIntent.getActivity(this, 0, mapIntent, 0);
 
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_stat_smile)
                 .setContentTitle(eventTitle)
                 .setContentText(eventLocation)
-                .setContentIntent(viewPendingIntent);
+                .setContentIntent(viewPendingIntent)
+                .addAction(R.drawable.ic_action_smile,
+                        getString(R.string.action1), mapPendingIntent);
 
         NotificationManagerCompat notificationManager =
                 NotificationManagerCompat.from(this);

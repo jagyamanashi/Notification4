@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">Notification 2</string>
+    <string name="action1">My action 1</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
