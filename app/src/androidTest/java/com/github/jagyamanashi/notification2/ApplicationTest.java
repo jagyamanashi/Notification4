@@ -1,4 +1,4 @@
-package com.github.jagyamanashi.notification1;
+package com.github.jagyamanashi.notification2;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
